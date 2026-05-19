@@ -105,4 +105,3 @@ const aboutThemeToggle = document.getElementById("about-theme-toggle");
 aboutThemeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
-

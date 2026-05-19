@@ -41,11 +41,6 @@ header {
   width: 100%;
 }
 
-nav {
-  display: block;
-  margin-left: auto;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -53,14 +48,24 @@ nav {
   padding: 10px 0;
 }
 
+nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 nav ul {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 30px;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
+  font-size: 1.2rem;
   text-decoration: none;
   color: var(--dark);
   font-weight: 500;
@@ -99,7 +104,7 @@ nav a i {
 }
 
 .hero {
-  padding: 70px 0 180px;
+  padding: 220px 0 180px;
   background:
     linear-gradient(135deg, rgba(219, 234, 254, 0.4) 25%, transparent 25%) -50px
       0/100px 100px,
@@ -110,6 +115,7 @@ nav a i {
     linear-gradient(45deg, rgba(219, 234, 254, 0.4) 25%, transparent 25%) 0px
       0/100px 100px,
     #f8fbff;
+  padding-top: 70px;
 }
 
 .features {
@@ -125,18 +131,22 @@ nav a i {
 
 .hero-content {
   max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .hero p {
   font-size: 1.2rem;
-  line-height: 1.9;
+  line-height: 1.7;
   color: var(--gray);
   max-width: 750px;
-  margin-top: 25px;
+  margin-top: 5px;
+  text-align: left;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.2;
   margin-bottom: 30px;
   text-align: left;
@@ -182,7 +192,7 @@ nav a i {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 320px;
+  aspect-ratio: 1 / 1;
   text-decoration: none;
   color: var(--dark);
   padding: 30px;
@@ -224,7 +234,7 @@ footer {
 .alphabs_brands {
   font-size: 100px;
   margin: 20px 0;
-  transition: 0.3s ease;
+  transition: 0.7s;
 }
 
 .email {
@@ -255,7 +265,7 @@ footer {
   color: var(--dark);
   font-size: 1.1rem;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: 0.7s;
 }
 
 .overlay {
@@ -278,10 +288,9 @@ footer {
   cursor: pointer;
 }
 
-#support-link {
-  cursor: pointer;
-}
-
+.support-link,
+#contact-link,
+#support-link,
 .sidebar #support-link {
   cursor: pointer;
 }
@@ -311,6 +320,16 @@ footer {
 .sidebar-logo span {
   font-size: 1.5rem;
   font-weight: 800;
+}
+
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-left: 0;
 }
 
 button.card {
@@ -368,13 +387,6 @@ button.card {
   padding: 25px 35px 20px;
   border-bottom: 1px solid var(--border);
 }
-.about-top h2 {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 2rem;
-  font-weight: 800;
-}
 
 .about-top h2 img {
   width: 45px;
@@ -419,11 +431,8 @@ button.card {
 
 .alpha-list li {
   margin-bottom: 14px;
-
   color: var(--gray);
-
   line-height: 1.8;
-
   font-size: 1.05rem;
 }
 
@@ -450,20 +459,8 @@ button.card {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-size: 2rem;
   font-weight: 800;
-
-  flex-shrink: 0;
-}
-
-.about-close {
-  margin-left: 18px;
 }
 
 .about-title-left {
@@ -488,31 +485,119 @@ button.card {
   color: green;
 }
 
+.about {
+  transition: 0.7s;
+}
+
 .fa-bars {
   font-size: x-large;
   margin: 0 20px;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .alphabs_brands {
+    font-size: 70px;
+  }
+}
+
+.yt-channel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.yt-channel-main img {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+  padding: 12px;
+  box-shadow: 0 0 45px black;
+}
+
+.yt-channel-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.yt-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: inherit;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.yt-channel-info p {
+  margin-top: 12px;
+  color: gray;
+  font-size: 1.3rem;
+}
+
+.yt-about-btn {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.welcome-text {
+  margin-left: auto;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: inherit;
+}
+
+/* =========================
+   RESPONSIVE MOBILE DESIGN
+========================= */
 
 @media (max-width: 768px) {
   .container {
     width: calc(100% - 24px);
     padding: 0 10px;
   }
+
   .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: 10px;
   }
 
-  .hero {
-    padding: 100px 0 70px;
+  .logo {
+    gap: 8px;
+    flex-shrink: 0;
   }
 
-  .hero p {
-    font-size: 1rem;
-    line-height: 1.7;
-    text-align: left;
+  .logo img {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
+  }
+
+  .logo span {
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+
+  .welcome-text {
+    display: none;
   }
 
   nav ul {
@@ -523,15 +608,31 @@ button.card {
     font-size: 1.1rem;
   }
 
-  .menu-toggle {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
+  .hero {
+    padding: 100px 0 70px;
   }
 
-  .logo span {
-    font-size: 1.4rem;
-    white-space: nowrap;
+  .yt-channel {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .yt-channel-info {
+    align-items: center;
+  }
+
+  .yt-channel-main img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .yt-name {
+    font-size: 2.2rem;
+  }
+
+  .yt-channel-info p {
+    font-size: 1rem;
   }
 
   .features {
@@ -555,21 +656,64 @@ button.card {
   }
 
   .alphabs_brands {
-    font-size: 80px;
-  }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 635px) {
-  .alphabs_brands {
     font-size: 70px;
   }
-  nav ul {
-    display: none;
+
+  .about-box {
+    border-radius: 18px;
+  }
+
+  .about-top {
+    padding: 20px;
+  }
+
+  .about-content {
+    padding: 22px;
+  }
+
+  .about-content p,
+  .alpha-list li {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .yt-name {
+    font-size: 1.8rem;
+  }
+
+  .yt-channel-main img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .features h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    min-height: 280px;
+    padding: 20px;
+  }
+
+  .alphabs_brands {
+    font-size: 55px;
   }
 }
 
@@ -647,13 +791,23 @@ body.dark-mode .about-top {
   transform: scale(1.1);
 }
 
-/* .menu-toggle {
-  display: none;
+.tap-yt {
+  color: inherit;
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  font-weight: 600;
 }
 
-@media (max-width: 635px) {
-  .menu-toggle {
-    display: block;
-  }
-} */
+.my-yt-channel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 20px;
+}
 
+.my-yt-channel-icon {
+  color: red;
+}
