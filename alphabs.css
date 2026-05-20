@@ -496,8 +496,13 @@ button.card {
 @media (max-width: 768px) {
   .container {
     width: calc(100% - 24px);
-    padding: 0 10px;
+    padding: 18px 0;
   }
+
+  .nav-container {
+    padding: 0 16px;
+  }
+
   .navbar {
     display: flex;
     align-items: center;
@@ -532,6 +537,7 @@ button.card {
   .logo span {
     font-size: 1.4rem;
     white-space: nowrap;
+    margin-right: 14px;
   }
 
   .features {
@@ -656,4 +662,3 @@ body.dark-mode .about-top {
     display: block;
   }
 } */
-
