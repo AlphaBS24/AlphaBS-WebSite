@@ -575,13 +575,19 @@ img {
     padding: 0 10px;
   }
 
+  .nav-container {
+    padding: 0 16px;
+  }
+
   .navbar {
     gap: 10px;
+    padding: 18px 0;
   }
 
   .logo {
     gap: 8px;
     flex-shrink: 0;
+    margin-right: 14px;
   }
 
   .logo img {
@@ -677,7 +683,6 @@ img {
     line-height: 1.7;
   }
 }
-
 /* EXTRA SMALL DEVICES */
 
 @media (max-width: 480px) {

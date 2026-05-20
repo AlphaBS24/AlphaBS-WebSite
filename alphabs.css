@@ -496,7 +496,7 @@ button.card {
 @media (max-width: 768px) {
   .container {
     width: calc(100% - 24px);
-    padding: 18px 0;
+    padding: 0 10px;
   }
 
   .nav-container {
@@ -508,6 +508,7 @@ button.card {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    padding: 18px 0;
   }
 
   .hero {
@@ -530,7 +531,7 @@ button.card {
 
   .menu-toggle {
     display: block;
-    font-size: 28px;
+    font-size: 25px;
     cursor: pointer;
   }
 
@@ -568,6 +569,15 @@ button.card {
 img {
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 635px) {
+  .alphabs_brands {
+    font-size: 70px;
+  }
+  nav ul {
+    display: none;
+  }
 }
 
 @media (max-width: 635px) {
