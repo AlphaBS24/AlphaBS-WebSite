@@ -581,6 +581,9 @@ button.card {
     width: 50%;
     justify-content: center;
   }
+  nav ul li:not(:last-child) {
+    display: none;
+  }
 }
 
 img {
@@ -592,7 +595,12 @@ img {
   .alphabs_brands {
     font-size: 70px;
   }
+
   nav ul {
+    display: flex;
+  }
+
+  nav ul li:not(:last-child) {
     display: none;
   }
 }
