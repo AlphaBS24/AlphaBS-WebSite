@@ -52,12 +52,11 @@ nav {
   align-items: center;
   padding: 10px 0;
 }
-
 nav ul {
   display: flex;
   align-items: center;
+  gap: 22px;
   list-style: none;
-  gap: 30px;
 }
 
 nav a {
@@ -65,6 +64,10 @@ nav a {
   color: var(--dark);
   font-weight: 500;
   transition: 0.3s;
+}
+
+nav .alpha_nav_brands {
+  font-size: 1.2rem;
 }
 
 nav a i {
@@ -214,11 +217,15 @@ footer {
 .logo img {
   width: 45px;
   height: 45px;
-  object-fit: contain;
+  object-fit: cover;
   background: white;
-  border-radius: 50%;
-  padding: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 3px;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s ease;
 }
 
 .alphabs_brands {
@@ -304,7 +311,7 @@ footer {
   height: 35px;
   object-fit: contain;
   background: white;
-  border-radius: 50%;
+  border-radius: 14px;
   padding: 4px;
 }
 
@@ -381,7 +388,7 @@ button.card {
   height: 45px;
   object-fit: contain;
   background: white;
-  border-radius: 50%;
+  border-radius: 14px;
   padding: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
@@ -564,20 +571,21 @@ button.card {
   .alphabs_brands {
     font-size: 80px;
   }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-link {
+    width: 50%;
+    justify-content: center;
+  }
 }
 
 img {
   max-width: 100%;
   height: auto;
-}
-
-@media (max-width: 635px) {
-  .alphabs_brands {
-    font-size: 70px;
-  }
-  nav ul {
-    display: none;
-  }
 }
 
 @media (max-width: 635px) {
@@ -663,7 +671,44 @@ body.dark-mode .about-top {
   transform: scale(1.1);
 }
 
-/* .menu-toggle {
+.hero-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+.hero-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 22px;
+
+  border-radius: 14px;
+  background: inherit;
+  color: inherit;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+
+  transition: 0.3s ease;
+}
+
+.hero-link:hover {
+  transform: translateY(-4px);
+  color: inherit;
+}
+
+.hero-link i {
+  font-size: 1.2rem;
+}
+
+.menu-toggle {
   display: none;
 }
 
@@ -671,4 +716,4 @@ body.dark-mode .about-top {
   .menu-toggle {
     display: block;
   }
-} */
+}
