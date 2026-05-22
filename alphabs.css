@@ -102,7 +102,7 @@ nav a i {
 }
 
 .hero {
-  padding: 70px 0 180px;
+  padding: 6px 0 140px;
   background:
     linear-gradient(135deg, rgba(219, 234, 254, 0.4) 25%, transparent 25%) -50px
       0/100px 100px,
@@ -113,21 +113,26 @@ nav a i {
     linear-gradient(45deg, rgba(219, 234, 254, 0.4) 25%, transparent 25%) 0px
       0/100px 100px,
     #f8fbff;
+  position: relative;
+
+  overflow: hidden;
 }
 
 .features {
   padding: 80px 0;
   background: white;
-  margin-top: -40px;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
   position: relative;
   z-index: 2;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.04);
+  margin-top: -80px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 .hero-content {
   max-width: 780px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero p {
@@ -139,12 +144,18 @@ nav a i {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 1.2;
-  margin-bottom: 30px;
-  text-align: left;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+
+  line-height: 1.05;
+
+  max-width: 850px;
+
+  letter-spacing: -2px;
 }
 
+.hero h1 span {
+  color: #2563eb;
+}
 .author-box {
   display: flex;
   align-items: center;
@@ -189,14 +200,17 @@ nav a i {
   text-decoration: none;
   color: var(--dark);
   padding: 30px;
-  border-radius: var(--radius);
   border: 1px solid var(--border);
-  transition: 0.3s;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  transition: 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
   box-shadow: var(--shadow);
+  transform: translateY(-10px);
 }
 
 .card h3 {
@@ -487,14 +501,6 @@ button.card {
   color: darkblue;
 }
 
-.home:hover {
-  color: rgb(93, 84, 228);
-}
-
-.support:hover {
-  color: green;
-}
-
 .fa-bars {
   font-size: x-large;
   margin: 0 20px;
@@ -581,7 +587,7 @@ button.card {
     width: 50%;
     justify-content: center;
   }
-  nav ul li:not(:last-child) {
+  nav ul li:not(:nth-last-child(1)):not(:nth-last-child(2)) {
     display: none;
   }
 }
@@ -600,8 +606,14 @@ img {
     display: flex;
   }
 
-  nav ul li:not(:last-child) {
-    display: none;
+  .login-nav {
+    padding: 7px 11px;
+
+    font-size: 0.7rem;
+  }
+
+  .login-nav i {
+    margin-right: 2px;
   }
 }
 
@@ -645,6 +657,19 @@ body.dark-mode .hero {
   background: #0f172a;
 }
 
+body.dark-mode {
+  background: #020617;
+}
+
+body.dark-mode .hero,
+body.dark-mode .features,
+body.dark-mode .card,
+body.dark-mode header {
+  background: #111827;
+
+  border-color: #1f2937;
+}
+
 body.dark-mode p,
 body.dark-mode .alpha-list li,
 body.dark-mode .yt-channel-info p,
@@ -682,7 +707,7 @@ body.dark-mode .about-top {
 .hero-links {
   display: flex;
   gap: 18px;
-  margin-top: 35px;
+  margin-top: 45px;
   flex-wrap: wrap;
 }
 
@@ -690,21 +715,15 @@ body.dark-mode .about-top {
   display: flex;
   align-items: center;
   gap: 10px;
-
-  padding: 14px 22px;
-
   border-radius: 14px;
   background: inherit;
   color: inherit;
-
-  font-weight: 600;
   font-size: 1rem;
-
   border: 1px solid var(--border);
-
   box-shadow: var(--shadow);
-
   transition: 0.3s ease;
+  padding: 16px 28px;
+  font-weight: 700;
 }
 
 .hero-link:hover {
@@ -723,5 +742,130 @@ body.dark-mode .about-top {
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+  }
+}
+
+.login-nav {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+  color: white;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+.login-nav:hover {
+  color: white;
+
+  transform: translateY(-3px);
+}
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.08);
+
+  top: -200px;
+  right: -120px;
+
+  filter: blur(40px);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.658);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  margin-bottom: 30px;
+  color: black;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+body.dark-mode .hero-badge {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+.hero-badge img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+body.dark-mode .hero-badge img {
+  background-color: white;
+  border-radius: 14px;
+}
+
+.discord-link {
+  background: #5865f2;
+  color: white;
+  border: none;
+}
+
+.discord-link:hover {
+  color: white;
+}
+
+.youtube-link {
+  background: white;
+  color: #111827;
+}
+
+body.dark-mode .youtube-link {
+  background: #111827;
+  border: white solid 1px;
+  color: white;
+}
+
+.stat-card h3 {
+  font-size: 2.2rem;
+
+  color: #2563eb;
+}
+@media (max-width: 900px) {
+  .hero {
+    padding: 80px 0 140px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+  }
+
+  .hero-link {
+    width: 100%;
+
+    justify-content: center;
+  }
+}
+
+@media (max-width: 435px) {
+  .login-nav {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 0;
+  }
+
+  .login-nav i {
+    font-size: 1rem;
+    margin: 0;
   }
 }
