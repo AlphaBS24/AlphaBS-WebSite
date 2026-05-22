@@ -720,7 +720,7 @@ body.dark-mode .about-top {
   display: none;
 }
 
-@media (max-width: 635px) {
+@media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
