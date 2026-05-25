@@ -989,6 +989,23 @@ body.dark-mode .profile {
     padding: 10px 16px;
     font-size: 14px;
   }
+  .login-nav {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 0;
+  }
+  .login-nav i {
+    font-size: 1rem;
+    margin: 0;
+  }
+  #profileName {
+    display: none;
+  }
 }
 
 @media (max-width: 635px) {
@@ -1008,12 +1025,6 @@ body.dark-mode .profile {
 
   .login-nav i {
     margin-right: 2px;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
   }
 }
 
@@ -1094,20 +1105,56 @@ body.dark-mode .profile {
   }
 }
 
-@media (max-width: 435px) {
-  .login-nav {
-    width: 42px;
-    height: 42px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    font-size: 0;
+@media (max-width: 450px) {
+  .navbar {
+    gap: 6px;
   }
 
-  .login-nav i {
-    font-size: 1rem;
-    margin: 0;
+  .logo {
+    gap: 6px;
   }
+
+  .logo span {
+    font-size: 1.9rem;
+  }
+
+  .logo img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .profile {
+    max-width: 120px;
+    padding: 2px 4px;
+    gap: 4px;
+  }
+
+  #profileName {
+    font-size: 0.72rem;
+    max-width: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .profile img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #logoutBtn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 0.7rem;
+  }
+
+  .theme-toggle {
+    font-size: 1rem;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
