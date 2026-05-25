@@ -13,7 +13,7 @@
     <meta property="og:title" content="AlphaBS" />
     <meta property="og:description" content="Brawl Stars Community" />
     <meta property="og:image" content="preview.png" />
-    <title>AlphaBS Community</title>
+    <title>AlphaBS</title>
     <link rel="icon" type="image/png" href="icon.png" />
     <link rel="stylesheet" href="alphabs.css" />
     <link
@@ -28,7 +28,63 @@
       referrerpolicy="no-referrer"
     />
   </head>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
 
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signOut,
+      onAuthStateChanged,
+    } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBsaRvdERYVOvCy0JFsWqghslChmFyESJ0",
+      authDomain: "alphabs-24.firebaseapp.com",
+      projectId: "alphabs-24",
+      storageBucket: "alphabs-24.firebasestorage.app",
+      messagingSenderId: "823400644425",
+      appId: "1:823400644425:web:965d6c290a2a8c97bc2498",
+      measurementId: "G-T0FGL5V2HZ",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const provider = new GoogleAuthProvider();
+
+    const loginBtn = document.getElementById("loginBtn");
+    const profileBox = document.getElementById("profileBox");
+    const profileImg = document.getElementById("profileImg");
+    const profileName = document.getElementById("profileName");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    loginBtn.addEventListener("click", async () => {
+      try {
+        await signInWithPopup(auth, provider);
+      } catch (error) {
+        console.log(error);
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        loginBtn.style.display = "none";
+        profileBox.style.display = "flex";
+
+        profileImg.src = user.photoURL;
+        profileName.textContent = user.displayName;
+      } else {
+        loginBtn.style.display = "block";
+        profileBox.style.display = "none";
+      }
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      await signOut(auth);
+    });
+  </script>
   <body>
     <header>
       <div class="container navbar">
@@ -64,10 +120,22 @@
             </li>
 
             <li>
-              <a class="login-nav" href="./login.html">
-                <i class="fa-solid fa-right-to-bracket"></i>
-                Sign In
-              </a>
+              <div class="auth">
+                <button id="loginBtn">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                  Sign In
+                </button>
+
+                <div class="profile" id="profileBox" style="display: none">
+                  <img id="profileImg" src="" alt="" />
+
+                  <span id="profileName"></span>
+
+                  <button id="logoutBtn">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                  </button>
+                </div>
+              </div>
             </li>
 
             <li>
@@ -99,13 +167,10 @@
       </a>
 
       <a target="_blank" class="yt" href="https://www.youtube.com/@alphabs24"
-        ><i class="fa-brands fa-youtube"></i> YouTube Channel</a
+        ><i class="fa-brands fa-youtube"></i> YouTube Channel Web</a
       >
-      <a
-        target="_blank"
-        class="dsc"
-        href="https://discord.com/channels/1421762847569870940/1471874675670909126"
-        ><i class="fa-brands fa-discord"></i> Discord Server 
+      <a target="_blank" class="dsc" href="https://discord.gg/sxbRRPRnEg"
+        ><i class="fa-brands fa-discord"></i> Discord Server Web
       </a>
       <a class="support support-link"
         ><i class="fa-solid fa-screwdriver-wrench"></i> Support</a
@@ -134,7 +199,7 @@
         <div class="hero-links">
           <a
             target="_blank"
-            href="https://discord.com/channels/1421762847569870940/1471874675670909126"
+            href="https://discord.gg/sxbRRPRnEg"
             class="hero-link discord-link"
           >
             <i class="fa-brands fa-discord"></i>
@@ -176,7 +241,7 @@
           </a>
 
           <a
-            href="https://discord.com/channels/1421762847569870940/1471874675670909126"
+            href="https://discord.gg/sxbRRPRnEg"
             class="card dsc"
             target="_blank"
             rel="noopener noreferrer"

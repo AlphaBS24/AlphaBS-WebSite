@@ -48,22 +48,26 @@ nav {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  justify-content: space-between;
+  padding: 14px 0;
+  min-height: 78px;
 }
 nav ul {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 28px;
   list-style: none;
 }
 
 nav a {
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--dark);
-  font-weight: 500;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 nav .alpha_nav_brands {
@@ -440,11 +444,8 @@ button.card {
 
 .alpha-list li {
   margin-bottom: 14px;
-
   color: var(--gray);
-
   line-height: 1.8;
-
   font-size: 1.05rem;
 }
 
@@ -476,10 +477,9 @@ button.card {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-size: 2rem;
   font-weight: 800;
-
   flex-shrink: 0;
 }
 
@@ -506,118 +506,10 @@ button.card {
   margin: 0 20px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    width: calc(100% - 24px);
-    padding: 0 10px;
-  }
-
-  .nav-container {
-    padding: 0 16px;
-  }
-
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 18px 0;
-  }
-
-  .hero {
-    padding: 100px 0 70px;
-  }
-
-  .hero p {
-    font-size: 1rem;
-    line-height: 1.7;
-    text-align: left;
-  }
-
-  nav ul {
-    gap: 16px;
-  }
-
-  nav a {
-    font-size: 1.1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 25px;
-    cursor: pointer;
-  }
-
-  .logo span {
-    font-size: 1.4rem;
-    white-space: nowrap;
-    margin-right: 14px;
-  }
-
-  .features {
-    padding: 60px 0;
-  }
-
-  .features h2 {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .card {
-    aspect-ratio: unset;
-    min-height: 320px;
-    padding: 25px;
-  }
-
-  .alphabs_brands {
-    font-size: 80px;
-  }
-
-  .hero-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-link {
-    width: 50%;
-    justify-content: center;
-  }
-  nav ul li:not(:nth-last-child(1)):not(:nth-last-child(2)) {
-    display: none;
-  }
-}
-
 img {
   max-width: 100%;
   height: auto;
 }
-
-@media (max-width: 635px) {
-  .alphabs_brands {
-    font-size: 70px;
-  }
-
-  nav ul {
-    display: flex;
-  }
-
-  .login-nav {
-    padding: 7px 11px;
-
-    font-size: 0.7rem;
-  }
-
-  .login-nav i {
-    margin-right: 2px;
-  }
-}
-
-/* DARK MODE BUTTON */
 
 .theme-toggle {
   background: transparent;
@@ -631,8 +523,6 @@ img {
 .theme-toggle:hover {
   transform: rotate(180deg);
 }
-
-/* DARK MODE */
 
 body.dark-mode {
   background: #0f172a;
@@ -666,7 +556,6 @@ body.dark-mode .features,
 body.dark-mode .card,
 body.dark-mode header {
   background: #111827;
-
   border-color: #1f2937;
 }
 
@@ -739,44 +628,27 @@ body.dark-mode .about-top {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-}
-
 .login-nav {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
-
   color: white;
-
   padding: 12px 18px;
-
   border-radius: 12px;
-
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
 }
 
 .login-nav:hover {
   color: white;
-
   transform: translateY(-3px);
 }
 .hero::before {
   content: "";
-
   position: absolute;
-
   width: 500px;
   height: 500px;
-
   border-radius: 50%;
-
   background: rgba(37, 99, 235, 0.08);
-
   top: -200px;
   right: -120px;
-
   filter: blur(40px);
 }
 
@@ -836,7 +708,375 @@ body.dark-mode .youtube-link {
 
   color: #2563eb;
 }
+
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+#logoutBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logoutBtn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f8fafc;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+}
+
+.profile img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  padding: 2px;
+  object-fit: cover;
+  background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+#profileName {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+.logo span {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+body.dark-mode .profile {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+#loginBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+#loginBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 575px) {
+  .navbar {
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .logo {
+    gap: 6px;
+  }
+
+  .logo img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  .profile {
+    padding: 3px 5px;
+    gap: 4px;
+  }
+
+  .profile img {
+    width: 28px;
+    height: 28px;
+  }
+
+  #profileName {
+    font-size: 11px;
+    max-width: 60px;
+  }
+
+  #logoutBtn {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+  }
+
+  #loginBtn {
+    padding: 9px 12px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #loginBtn i {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  .theme-toggle {
+    font-size: 1rem;
+  }
+
+  nav ul {
+    gap: 8px;
+  }
+
+  .fa-bars {
+    font-size: 1.4rem;
+    margin: 0 10px 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #logoutBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  #profileName {
+    display: block;
+    font-size: 12px;
+    max-width: 85px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .profile {
+    gap: 6px;
+    padding: 4px 6px;
+  }
+
+  .profile img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+    padding: 0 10px;
+  }
+
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 50px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-top: 20px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 22px;
+    text-align: left;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .logo span {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    margin-right: 14px;
+  }
+
+  .features {
+    padding: 60px 0;
+  }
+
+  .features h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    aspect-ratio: unset;
+    min-height: 320px;
+    padding: 25px;
+  }
+
+  .alphabs_brands {
+    font-size: 80px;
+  }
+
+  .hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 35px;
+  }
+
+  .hero-link {
+    width: 100%;
+    padding: 16px;
+    justify-content: center;
+    font-size: 15px;
+  }
+  nav ul li:not(:nth-last-child(1)):not(:nth-last-child(2)) {
+    display: none;
+  }
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  #loginBtn {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+  .hero-badge {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 635px) {
+  .alphabs_brands {
+    font-size: 70px;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  .login-nav {
+    padding: 7px 11px;
+
+    font-size: 0.7rem;
+  }
+
+  .login-nav i {
+    margin-right: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
 @media (max-width: 900px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  nav ul {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  nav a i {
+    margin-right: 5px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo span {
+    font-size: 1.8rem;
+  }
+
+  .profile {
+    gap: 8px;
+    padding: 4px 8px;
+  }
+
+  .profile img {
+    width: 32px;
+    height: 32px;
+  }
+
+  #profileName {
+    font-size: 14px;
+  }
+
+  #loginBtn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  #logoutBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .theme-toggle {
+    font-size: 1.1rem;
+  }
+
   .hero {
     padding: 80px 0 140px;
   }
@@ -847,8 +1087,10 @@ body.dark-mode .youtube-link {
 
   .hero-link {
     width: 100%;
-
     justify-content: center;
+
+    padding: 10px 14px;
+    font-size: 13px;
   }
 }
 
